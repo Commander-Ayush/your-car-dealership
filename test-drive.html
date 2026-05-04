@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reserve a Test Drive — Maison Motors</title>
+  <link rel="stylesheet" href="css/common.css" />
+  <link rel="stylesheet" href="css/test-drive.css" />
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main>
+    <!-- FORM VIEW -->
+    <section class="container td-grid" id="td-form-view">
+      <div class="td-left">
+        <p class="overline">Reserve</p>
+        <h1 class="td-title">A private<br><span class="italic-em">test drive.</span></h1>
+        <p class="td-lede">
+          Choose your machine and a time that suits. Our concierge prepares the
+          vehicle, the route, and a quiet hour for you to experience it
+          properly.
+        </p>
+        <div class="td-image">
+          <img id="td-image" src="" alt="" />
+        </div>
+        <p class="overline" style="margin-top:24px">Selected</p>
+        <p class="td-selected" id="td-selected"></p>
+      </div>
+
+      <form class="td-right" id="td-form" novalidate>
+        <div class="field">
+          <label for="td-vehicle">Vehicle</label>
+          <select id="td-vehicle"></select>
+        </div>
+
+        <div class="td-row-2">
+          <div class="field">
+            <label for="td-name">Full name</label>
+            <input type="text" id="td-name" placeholder="Your name" />
+          </div>
+          <div class="field">
+            <label for="td-phone">Phone</label>
+            <input type="tel" id="td-phone" placeholder="+1 (___) ___ ____" />
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="td-email">Email</label>
+          <input type="email" id="td-email" placeholder="you@domain.com" />
+        </div>
+
+        <div class="td-row-2">
+          <div class="field">
+            <label for="td-date">Preferred date</label>
+            <input type="date" id="td-date" />
+          </div>
+          <div class="field">
+            <label for="td-time">Time</label>
+            <select id="td-time">
+              <option value="">Select time</option>
+              <option value="10:00">10:00</option>
+              <option value="11:30">11:30</option>
+              <option value="13:00">13:00</option>
+              <option value="14:30">14:30</option>
+              <option value="16:00">16:00</option>
+              <option value="17:30">17:30</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="td-notes">Notes (optional)</label>
+          <textarea id="td-notes" rows="3" placeholder="Anything we should prepare for you?"></textarea>
+        </div>
+
+        <div class="td-submit-row">
+          <button type="submit" class="btn btn-primary">
+            Reserve Test Drive
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </button>
+          <p class="td-fineprint">No payment required to reserve.</p>
+        </div>
+      </form>
+    </section>
+
+    <!-- SUCCESS VIEW -->
+    <section class="container td-success" id="td-success-view" hidden>
+      <div class="td-success-mark">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      <p class="overline">Confirmed</p>
+      <h1 class="td-success-title">Your test drive is <span class="italic-em">reserved.</span></h1>
+      <p class="td-success-text" id="td-success-text"></p>
+      <button class="btn btn-secondary" id="btn-another">
+        Book another
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </button>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/test-drive.js"></script>
+</body>
+</html>

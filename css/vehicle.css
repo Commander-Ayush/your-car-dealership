@@ -1,0 +1,177 @@
+/* ============================================================
+   vehicle.css — Vehicle detail page
+   ============================================================ */
+
+.breadcrumb { padding: 32px 0 16px; }
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--ink-2);
+  cursor: pointer;
+}
+.back-btn:hover { color: var(--ink); }
+.back-btn svg { width: 14px; height: 14px; }
+
+.vehicle-hero {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  padding-top: 24px;
+}
+@media (min-width: 1024px) {
+  .vehicle-hero { grid-template-columns: 8fr 4fr; gap: 56px; }
+}
+
+.vehicle-gallery .main-img-wrap {
+  position: relative;
+  aspect-ratio: 16/10;
+  background: var(--bg-2);
+  overflow: hidden;
+}
+.vehicle-gallery .main-img-wrap img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+}
+.vehicle-gallery .tier-tag {
+  position: absolute; top: 20px; left: 20px;
+  background: rgba(251,250,248,0.92);
+  backdrop-filter: blur(8px);
+  padding: 4px 12px;
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 0.2em; text-transform: uppercase;
+}
+.thumbs {
+  margin-top: 16px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+.thumb {
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  cursor: pointer;
+  background: var(--bg-2);
+  padding: 0;
+}
+.thumb img { width: 100%; height: 100%; object-fit: cover; }
+.thumb.active { border-color: var(--ink); }
+
+.vehicle-side .vehicle-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 4vw, 48px);
+  margin: 16px 0 0;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  font-weight: 400;
+}
+.price-block {
+  margin-top: 32px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid var(--line);
+}
+.vehicle-price {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  margin: 8px 0 8px;
+  font-weight: 400;
+}
+.price-note { color: var(--ink-2); font-size: 14px; margin: 0; }
+
+.vehicle-desc { color: var(--ink-2); margin: 32px 0 0; line-height: 1.7; }
+
+.vehicle-ctas {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.concierge-card {
+  margin-top: 40px;
+  padding: 20px;
+  background: rgba(242,239,234,0.6);
+  border: 1px solid var(--line);
+}
+.concierge-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  margin: 8px 0 4px;
+  font-weight: 400;
+}
+.concierge-hours {
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  margin: 0;
+}
+
+/* SPECS */
+.specs-section { margin-top: 96px; }
+.specs-head { border-top: 1px solid var(--line); padding-top: 56px; }
+.specs-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(28px, 4vw, 40px);
+  margin: 12px 0 0;
+  letter-spacing: -0.01em;
+  font-weight: 400;
+}
+.specs-grid {
+  margin-top: 48px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: var(--line);
+}
+@media (min-width: 768px) { .specs-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 1024px) { .specs-grid { grid-template-columns: repeat(6, 1fr); } }
+.spec-cell {
+  background: #fff;
+  padding: 24px;
+}
+.spec-cell .k {
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--ink-2);
+  margin: 0;
+}
+.spec-cell .v {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  margin: 12px 0 0;
+  font-weight: 400;
+}
+
+/* RELATED */
+.related-section { margin-top: 96px; }
+.related-head {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 40px;
+}
+@media (min-width: 1024px) {
+  .related-head { flex-direction: row; align-items: flex-end; justify-content: space-between; }
+}
+.related-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+@media (min-width: 640px) { .related-grid { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 1024px) { .related-grid { grid-template-columns: repeat(3, 1fr); gap: 32px; } }
+
+.notfound {
+  text-align: center;
+  padding: 128px 24px;
+}
+.notfound-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(36px, 5vw, 56px);
+  margin: 20px 0 40px;
+  font-weight: 400;
+}

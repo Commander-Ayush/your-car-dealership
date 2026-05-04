@@ -1,0 +1,145 @@
+/* ============================================================
+   financing.css — Financing calculator page
+   ============================================================ */
+
+.fin-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 48px;
+  padding-top: 48px;
+  padding-bottom: 96px;
+}
+@media (min-width: 1024px) { .fin-grid { grid-template-columns: 5fr 7fr; gap: 56px; } }
+
+.fin-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(40px, 6vw, 72px);
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  margin: 20px 0 0;
+  font-weight: 400;
+}
+.fin-lede { color: var(--ink-2); margin: 32px 0 0; line-height: 1.7; max-width: 460px; }
+.fin-image { margin-top: 48px; aspect-ratio: 4/5; overflow: hidden; }
+.fin-image img { width: 100%; height: 100%; object-fit: cover; }
+
+.fin-right {
+  display: flex; flex-direction: column;
+}
+@media (min-width: 1024px) {
+  .fin-right { padding-left: 48px; border-left: 1px solid var(--line); }
+}
+
+.slider-row { margin-bottom: 40px; }
+.slider-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  gap: 16px;
+}
+.slider-value {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  margin: 0;
+  font-weight: 400;
+  text-align: right;
+}
+.slider-range {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* Custom range styling */
+.mm-range {
+  -webkit-appearance: none; appearance: none;
+  width: 100%;
+  height: 36px;
+  background: transparent;
+  outline: none;
+  cursor: pointer;
+}
+.mm-range::-webkit-slider-runnable-track {
+  height: 2px;
+  background: linear-gradient(to right, var(--ink) var(--p, 0%), var(--line) var(--p, 0%));
+  border: none;
+}
+.mm-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  background: var(--ink);
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 1px var(--ink);
+  margin-top: -8px;
+  cursor: pointer;
+}
+.mm-range::-moz-range-track {
+  height: 2px;
+  background: var(--line);
+}
+.mm-range::-moz-range-progress {
+  height: 2px;
+  background: var(--ink);
+}
+.mm-range::-moz-range-thumb {
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  background: var(--ink);
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 1px var(--ink);
+  cursor: pointer;
+}
+
+/* RESULT */
+.fin-result {
+  margin-top: 56px;
+  background: var(--ink); color: #fff;
+  padding: 40px;
+}
+@media (min-width: 1024px) { .fin-result { padding: 48px; } }
+.fin-monthly {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(56px, 9vw, 110px);
+  margin: 16px 0 0;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  font-weight: 400;
+}
+.fin-per {
+  font-size: 22px;
+  color: rgba(255,255,255,0.4);
+  font-family: 'Manrope', sans-serif;
+  font-weight: 500;
+  margin-left: 12px;
+}
+.fin-result-grid {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: rgba(255,255,255,0.1);
+}
+@media (min-width: 640px) { .fin-result-grid { grid-template-columns: repeat(3, 1fr); } }
+.fin-cell { background: var(--ink); padding: 24px 0; }
+@media (min-width: 640px) { .fin-cell { padding-right: 16px; } }
+.fin-cell-v {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  margin: 8px 0 0;
+  font-weight: 400;
+}
+.fin-cta { margin-top: 40px; }
+.fin-disclaimer {
+  margin: 24px 0 0;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  line-height: 1.7;
+}

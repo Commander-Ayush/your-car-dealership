@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Atelier — Maison Motors</title>
+  <link rel="stylesheet" href="css/common.css" />
+  <link rel="stylesheet" href="css/about.css" />
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main>
+    <!-- HERO -->
+    <section class="container about-hero">
+      <div class="about-hero-grid">
+        <div>
+          <p class="overline">Our atelier</p>
+          <h1 class="about-title">
+            Twenty-six<br>years of<br>
+            <span class="italic-em gold">quiet excellence.</span>
+          </h1>
+        </div>
+        <div>
+          <p class="about-lede">
+            Founded in 1998 above a Soho watchmaker, Maison Motors has grown
+            into one of the world's most discreet private dealerships —
+            entrusted with the acquisition of more than 3,400 extraordinary
+            automobiles for a clientele that values restraint above all.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- IMAGE -->
+    <section class="container about-image-wrap">
+      <div class="about-image">
+        <img src="https://static.prod-images.emergentagent.com/jobs/6d76a550-a766-4da0-8c9f-1d3a87264e0e/images/ef17fe167a96451d044252ddedcc6aec41df928806cc33a6acbf843c86e6b9ea.png" alt="The atelier" />
+      </div>
+    </section>
+
+    <!-- PILLARS -->
+    <section class="container pillars">
+      <div class="pillar">
+        <p class="pillar-num">01</p>
+        <h3>Curation</h3>
+        <p>Every vehicle in our collection is hand-selected by our acquisition committee. Provenance, condition, and rarity are non-negotiable.</p>
+      </div>
+      <div class="pillar">
+        <p class="pillar-num">02</p>
+        <h3>Discretion</h3>
+        <p>Private viewings, off-market listings, and confidential transactions. Your acquisition is known only to those you choose.</p>
+      </div>
+      <div class="pillar">
+        <p class="pillar-num">03</p>
+        <h3>Stewardship</h3>
+        <p>From the first viewing to long-term care, we remain your single point of contact for every aspect of ownership.</p>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="container contact-grid">
+      <div class="contact-info">
+        <p class="overline">Visit us</p>
+        <h2 class="contact-title">The showroom.</h2>
+        <p class="contact-lede">
+          Our flagship atelier in Beverly Hills welcomes you by appointment.
+          Park privately, take espresso, and meet your machine.
+        </p>
+        <div class="info-list">
+          <div class="info-item">
+            <span class="info-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+            <div>
+              <p class="overline">Address</p>
+              <p>14 Beverly Drive</p>
+              <p>Beverly Hills, CA 90210</p>
+            </div>
+          </div>
+          <div class="info-item">
+            <span class="info-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+            <div>
+              <p class="overline">Concierge</p>
+              <p>+1 (310) 555 0144</p>
+            </div>
+          </div>
+          <div class="info-item">
+            <span class="info-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span>
+            <div>
+              <p class="overline">Email</p>
+              <p>concierge@maisonmotors.com</p>
+            </div>
+          </div>
+          <div class="info-item">
+            <span class="info-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
+            <div>
+              <p class="overline">Hours</p>
+              <p>Mon — Sat · 9:00 to 19:00</p>
+              <p>Sun · By appointment</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <form class="contact-form" id="contact-form" novalidate>
+        <p class="overline">Send a private enquiry</p>
+        <div class="contact-row">
+          <div class="field">
+            <label for="c-name">Name</label>
+            <input type="text" id="c-name" placeholder="Your name" />
+          </div>
+          <div class="field">
+            <label for="c-email">Email</label>
+            <input type="email" id="c-email" placeholder="you@domain.com" />
+          </div>
+        </div>
+        <div class="field">
+          <label for="c-message">Message</label>
+          <textarea id="c-message" rows="5" placeholder="How may we be of service?"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">
+          Send Enquiry
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </button>
+      </form>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="js/common.js"></script>
+  <script src="js/about.js"></script>
+</body>
+</html>

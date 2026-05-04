@@ -1,0 +1,98 @@
+/* ============================================================
+   test-drive.css — Test Drive booking page
+   ============================================================ */
+
+.td-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  padding-top: 48px;
+  padding-bottom: 96px;
+}
+@media (min-width: 1024px) { .td-grid { grid-template-columns: 5fr 7fr; gap: 56px; } }
+
+.td-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(40px, 6vw, 72px);
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  margin: 20px 0 0;
+  font-weight: 400;
+}
+.td-lede {
+  margin: 32px 0 0;
+  color: var(--ink-2);
+  line-height: 1.7;
+  max-width: 460px;
+}
+.td-image {
+  margin-top: 40px;
+  aspect-ratio: 4/5;
+  overflow: hidden;
+  background: var(--bg-2);
+}
+.td-image img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: opacity 0.5s ease;
+}
+.td-selected {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  margin: 4px 0 0;
+  font-weight: 400;
+}
+
+/* form right column */
+.td-right {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+@media (min-width: 1024px) {
+  .td-right { padding-left: 48px; border-left: 1px solid var(--line); }
+}
+
+.td-row-2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+@media (min-width: 640px) { .td-row-2 { grid-template-columns: 1fr 1fr; } }
+
+.td-submit-row { padding-top: 24px; }
+.td-fineprint {
+  margin: 16px 0 0;
+  font-size: 11px;
+  color: var(--ink-2);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+/* SUCCESS VIEW */
+.td-success {
+  text-align: center;
+  padding: 96px 24px;
+  max-width: 720px;
+}
+.td-success-mark {
+  width: 64px; height: 64px;
+  background: var(--ink); color: #fff;
+  margin: 0 auto;
+  display: inline-flex; align-items: center; justify-content: center;
+}
+.td-success-mark svg { width: 28px; height: 28px; }
+.td-success-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(36px, 5vw, 56px);
+  margin: 20px 0 0;
+  letter-spacing: -0.02em;
+  font-weight: 400;
+  line-height: 1.05;
+}
+.td-success-text {
+  color: var(--ink-2);
+  margin: 24px auto 40px;
+  max-width: 480px;
+  line-height: 1.7;
+}

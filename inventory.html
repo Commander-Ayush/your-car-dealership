@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Collection — Maison Motors</title>
+  <meta name="description" content="Browse the Maison Motors private collection of luxury and exotic automobiles." />
+  <link rel="stylesheet" href="css/common.css" />
+  <link rel="stylesheet" href="css/inventory.css" />
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main>
+    <!-- PAGE HEADER -->
+    <section class="page-head">
+      <div class="container page-head-grid">
+        <div>
+          <p class="overline">The Collection</p>
+          <h1 class="page-title">Every machine, <span class="italic-em">considered.</span></h1>
+        </div>
+        <div class="page-head-meta">
+          <p>Showing <strong id="result-count-top">0</strong> of <strong>12</strong> vehicles</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="container inventory-layout">
+      <!-- FILTERS -->
+      <aside class="filters" id="filters">
+        <div class="filters-inner">
+          <div class="filters-head">
+            <p class="overline">Filters</p>
+            <button id="btn-reset" class="filter-reset">Reset</button>
+          </div>
+
+          <div class="filter-block">
+            <label for="f-make">Marque</label>
+            <select id="f-make"></select>
+          </div>
+
+          <div class="filter-block">
+            <label for="f-tier">Tier</label>
+            <select id="f-tier"></select>
+          </div>
+
+          <div class="filter-block">
+            <label for="f-body">Body</label>
+            <select id="f-body"></select>
+          </div>
+
+          <div class="filter-block">
+            <label for="f-year">Year</label>
+            <select id="f-year"></select>
+          </div>
+
+          <div class="filter-block">
+            <label id="price-label">Price · $100k — $700k</label>
+            <div class="dual-range">
+              <input type="range" id="f-price-min" min="100000" max="700000" step="5000" value="100000" />
+              <input type="range" id="f-price-max" min="100000" max="700000" step="5000" value="700000" />
+              <div class="range-track"><div class="range-fill" id="range-fill"></div></div>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- RESULTS -->
+      <div class="results">
+        <div class="results-head">
+          <p class="results-count"><span id="result-count">0</span> results</p>
+          <div class="sort-wrap">
+            <select id="f-sort" class="sort-select">
+              <option value="featured">Featured</option>
+              <option value="price-asc">Price · Low to High</option>
+              <option value="price-desc">Price · High to Low</option>
+              <option value="year-desc">Newest first</option>
+            </select>
+          </div>
+        </div>
+
+        <div id="grid" class="results-grid"></div>
+
+        <div id="no-results" class="no-results" hidden>
+          <p class="overline">No matches</p>
+          <p class="no-results-title">Adjust your filters to discover more.</p>
+          <button class="btn btn-secondary" id="btn-reset-2">Reset filters</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/inventory.js"></script>
+</body>
+</html>

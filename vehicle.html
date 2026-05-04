@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vehicle — Maison Motors</title>
+  <link rel="stylesheet" href="css/common.css" />
+  <link rel="stylesheet" href="css/vehicle.css" />
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main>
+    <!-- BREADCRUMB -->
+    <div class="container breadcrumb">
+      <button id="btn-back" class="back-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Back
+      </button>
+    </div>
+
+    <!-- HERO -->
+    <section class="container vehicle-hero">
+      <div class="vehicle-gallery">
+        <div class="main-img-wrap">
+          <img id="main-img" src="" alt="" />
+          <span class="tier-tag" id="tier-tag"></span>
+        </div>
+        <div id="thumbs" class="thumbs"></div>
+      </div>
+
+      <aside class="vehicle-side">
+        <p class="overline" id="v-meta-line"></p>
+        <h1 class="vehicle-title" id="v-model"></h1>
+
+        <div class="price-block">
+          <p class="overline">Asking</p>
+          <p class="vehicle-price" id="v-price"></p>
+          <p class="price-note">Excluding tax & registration</p>
+        </div>
+
+        <p class="vehicle-desc" id="v-desc"></p>
+
+        <div class="vehicle-ctas">
+          <a id="cta-test" href="#" class="btn btn-primary btn-block">
+            Reserve a Test Drive
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+          <a id="cta-finance" href="#" class="btn btn-secondary btn-block">Calculate Financing</a>
+        </div>
+
+        <div class="concierge-card">
+          <p class="overline">Concierge</p>
+          <p class="concierge-num">+1 (310) 555 0144</p>
+          <p class="concierge-hours">Mon — Sat · 9 to 19</p>
+        </div>
+      </aside>
+    </section>
+
+    <!-- SPECS -->
+    <section class="container specs-section">
+      <div class="specs-head">
+        <p class="overline">Specifications</p>
+        <h2 class="specs-title">Engineered <span class="italic-em">to perform.</span></h2>
+      </div>
+      <div class="specs-grid" id="specs-grid"></div>
+    </section>
+
+    <!-- RELATED -->
+    <section class="container related-section" id="related-section" hidden>
+      <div class="related-head">
+        <div>
+          <p class="overline">More from the collection</p>
+          <h2 class="specs-title">You may also <span class="italic-em">consider.</span></h2>
+        </div>
+        <a href="inventory.html" class="btn btn-secondary">
+          View All
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+      <div class="related-grid" id="related-grid"></div>
+    </section>
+
+    <!-- NOT FOUND -->
+    <section class="container notfound" id="notfound" hidden>
+      <p class="overline">Not found</p>
+      <h1 class="notfound-title">This vehicle has moved on.</h1>
+      <a href="inventory.html" class="btn btn-secondary">Back to Collection</a>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/vehicle.js"></script>
+</body>
+</html>
