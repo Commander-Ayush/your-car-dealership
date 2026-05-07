@@ -88,7 +88,7 @@
     host.outerHTML = `
       <header class="site-header" data-testid="site-header">
         <div class="header-inner">
-          <a href="index.html" class="brand" data-testid="brand-logo">Maison<span class="dot">.</span>Motors</a>
+          <a href="index.html" class="brand" data-testid="brand-logo">Your<span class="dot">.</span>Car Dealership</a>
           <nav class="nav">${desktopLinks}</nav>
           <div class="header-actions">
             <a href="test-drive.html" class="header-cta">Reserve Test Drive</a>
