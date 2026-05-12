@@ -145,16 +145,16 @@
           <div class="footer-col">
             <p class="label">Showroom</p>
             <ul>
-              <li>14 Beverly Drive</li>
-              <li>Beverly Hills, CA 90210</li>
+              <li>Delhi Drive</li>
+              <li>In Delhi since 1994</li>
               <li>Mon — Sat · 9 to 19</li>
               <li>Sun · By appointment</li>
             </ul>
           </div>
           <div class="footer-col footer-concierge">
             <p class="label">Concierge</p>
-            <p class="number">+1 (310) 555 0144</p>
-            <p class="email">concierge@maisonmotors.com</p>
+            <p class="number">+91 XXXXXXXXX</p>
+            <p class="email">your_gamil.com</p>
             <p class="note">Available 24/7 to our private clients.</p>
           </div>
         </div>
