@@ -1,23 +1,24 @@
 /* ============================================================
-   MAISON MOTORS — common.js
-   Shared: header inject, footer inject, mobile menu, toasts,
-           scroll state, helpers
+   AUTO ELITE — common.js
+   Shared: header, footer, toasts, helpers
    ============================================================ */
 
 (function () {
   'use strict';
 
-  /* ---------- Helpers exposed globally ---------- */
   window.MM = window.MM || {};
 
+  /* ── Price formatting (INR) ─────────────────────────────── */
   MM.formatPrice = function (n) {
-    return new Intl.NumberFormat('en-US', {
-      style: 'currency', currency: 'USD', maximumFractionDigits: 0,
-    }).format(n);
+    if (n >= 10000000) return '₹' + (n / 10000000).toFixed(2) + ' Cr';
+    if (n >= 100000)   return '₹' + (n / 100000).toFixed(2) + ' L';
+    return '₹' + n.toLocaleString('en-IN');
   };
 
   MM.formatPriceShort = function (n) {
-    return '$' + Math.round(n / 1000) + 'k';
+    if (n >= 10000000) return '₹' + (n / 10000000).toFixed(1) + 'Cr';
+    if (n >= 100000)   return '₹' + (n / 100000).toFixed(0) + 'L';
+    return '₹' + Math.round(n / 1000) + 'k';
   };
 
   MM.qs = (sel, root = document) => root.querySelector(sel);
@@ -29,7 +30,7 @@
     return p;
   };
 
-  /* ---------- Toasts ---------- */
+  /* ── Toasts ─────────────────────────────────────────────── */
   function ensureToastRoot() {
     let root = document.getElementById('mm-toasts');
     if (!root) {
@@ -53,13 +54,13 @@
     }, duration);
   };
 
-  /* ---------- Header & Footer injection ---------- */
+  /* ── Nav links ──────────────────────────────────────────── */
   const NAV_LINKS = [
-    { href: 'index.html',     id: 'home',       label: 'Home' },
-    { href: 'inventory.html', id: 'collection', label: 'Collection' },
-    { href: 'financing.html', id: 'financing',  label: 'Financing' },
-    { href: 'test-drive.html',id: 'test-drive', label: 'Test Drive' },
-    { href: 'about.html',     id: 'atelier',    label: 'Atelier' },
+    { href: 'index.html',      id: 'home',       label: 'Home' },
+    { href: 'inventory.html',  id: 'collection', label: 'Inventory' },
+    { href: 'financing.html',  id: 'financing',  label: 'EMI Calculator' },
+    { href: 'test-drive.html', id: 'test-drive', label: 'Test Drive' },
+    { href: 'about.html',      id: 'about',      label: 'About Us' },
   ];
 
   function currentPageId() {
@@ -68,7 +69,7 @@
     if (path.startsWith('inventory') || path.startsWith('vehicle')) return 'collection';
     if (path.startsWith('financing')) return 'financing';
     if (path.startsWith('test-drive')) return 'test-drive';
-    if (path.startsWith('about')) return 'atelier';
+    if (path.startsWith('about')) return 'about';
     return '';
   }
 
@@ -78,20 +79,23 @@
     const active = currentPageId();
 
     const desktopLinks = NAV_LINKS.map(l =>
-      `<a href="${l.href}" class="${active === l.id ? 'active' : ''}">${l.label}</a>`
+        `<a href="${l.href}" class="${active === l.id ? 'active' : ''}">${l.label}</a>`
     ).join('');
 
     const mobileLinks = NAV_LINKS.map(l =>
-      `<a href="${l.href}" class="${active === l.id ? 'active' : ''}">${l.label}</a>`
+        `<a href="${l.href}" class="${active === l.id ? 'active' : ''}">${l.label}</a>`
     ).join('');
 
     host.outerHTML = `
       <header class="site-header" data-testid="site-header">
         <div class="header-inner">
-          <a href="index.html" class="brand" data-testid="brand-logo">Your<span class="dot">.</span>Car Dealership</a>
+          <a href="index.html" class="brand" data-testid="brand-logo">
+            Auto<span class="dot"> Elite</span>
+            <span class="brand-tag">Certified Pre-Owned</span>
+          </a>
           <nav class="nav">${desktopLinks}</nav>
           <div class="header-actions">
-            <a href="test-drive.html" class="header-cta">Reserve Test Drive</a>
+            <a href="test-drive.html" class="header-cta">Book Test Drive</a>
             <button class="menu-toggle" id="menu-toggle" aria-label="Open menu">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
             </button>
@@ -124,51 +128,56 @@
       <footer class="site-footer" data-testid="site-footer">
         <div class="footer-grid">
           <div class="footer-brand">
-            <p class="overline">Maison Motors — Est. 1998</p>
-            <h3>The art <span class="italic-em">of</span><br>extraordinary motoring.</h3>
-            <p>A private collection of the world's most desired automobiles — curated, certified, and delivered with quiet excellence.</p>
+            <p class="overline">Auto Elite · Est. 2010</p>
+            <h3>Delhi's most <span class="italic-em">trusted</span><br>used car destination.</h3>
+            <p>Every vehicle inspected at 150+ checkpoints, backed by a 6-month warranty and transparent pricing. No surprises — ever.</p>
             <div class="socials">
               <a href="#" class="social" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
-              <a href="#" class="social" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
-              <a href="mailto:concierge@maisonmotors.com" class="social" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+              <a href="#" class="social" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+              <a href="https://wa.me/919876543210" class="social" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></a>
             </div>
           </div>
           <div class="footer-col">
             <p class="label">Explore</p>
             <ul>
-              <li><a href="inventory.html">Collection</a></li>
-              <li><a href="financing.html">Financing</a></li>
-              <li><a href="test-drive.html">Test Drive</a></li>
-              <li><a href="about.html">Atelier</a></li>
+              <li><a href="inventory.html">Our Inventory</a></li>
+              <li><a href="financing.html">EMI Calculator</a></li>
+              <li><a href="test-drive.html">Book Test Drive</a></li>
+              <li><a href="about.html">About Us</a></li>
             </ul>
           </div>
           <div class="footer-col">
             <p class="label">Showroom</p>
             <ul>
-              <li>Delhi Drive</li>
-              <li>In Delhi since 1994</li>
-              <li>Mon — Sat · 9 to 19</li>
-              <li>Sun · By appointment</li>
+              <li>Block B, Building No. B63</li>
+              <li>Opposite To Maa Vaishno Devi Mandir</li>
+              <li>Lajpat Nagar 1, Lajpat Nagar</li>
+              <li>Delhi NCR — 121 003</li>
+              <li>Mon — Sat · 10:00 to 19:30</li>
             </ul>
           </div>
           <div class="footer-col footer-concierge">
-            <p class="label">Concierge</p>
-            <p class="number">+91 XXXXXXXXX</p>
-            <p class="email">your_gamil.com</p>
-            <p class="note">Available 24/7 to our private clients.</p>
+            <p class="label">Talk to Us</p>
+            <p class="number">+91 9711044227</p>
+            <p class="email">info@autoelite.in</p>
+            <p class="note">Our advisors are available 6 days a week.</p>
+            <a href="https://wa.me/919876543210" style="display:inline-flex;align-items:center;gap:8px;margin-top:16px;font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.7);border-bottom:1px solid rgba(255,255,255,0.2);padding-bottom:3px;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+              Chat on WhatsApp
+            </a>
           </div>
         </div>
         <div class="footer-bottom">
           <div class="inner">
-            <p>© ${year} Maison Motors. All rights reserved.</p>
-            <p class="upper">Crafted with intention</p>
+            <p>© ${year} Auto Elite. All rights reserved. · GSTIN: 07XXXXX1234Z1</p>
+            <p class="upper">Delhi NCR · Certified Pre-Owned</p>
           </div>
         </div>
       </footer>
     `;
   }
 
-  /* ---------- Vehicle card (shared renderer) ---------- */
+  /* ── Vehicle card renderer ──────────────────────────────── */
   MM.vehicleCardHTML = function (v) {
     return `
       <a href="vehicle.html?id=${v.id}" class="v-card" data-testid="vehicle-card-${v.id}">
@@ -188,11 +197,11 @@
           </div>
           <div class="meta">
             <span>${v.year}</span><span>·</span>
-            <span>${v.mileage.toLocaleString()} mi</span><span>·</span>
+            <span>${v.mileage.toLocaleString()} km</span><span>·</span>
             <span>${v.fuel}</span>
           </div>
           <div class="price-row">
-            <span class="from">From</span>
+            <span class="from">Asking</span>
             <span class="price">${MM.formatPrice(v.price)}</span>
           </div>
         </div>
@@ -200,7 +209,7 @@
     `;
   };
 
-  /* ---------- Init ---------- */
+  /* ── Init ───────────────────────────────────────────────── */
   document.addEventListener('DOMContentLoaded', () => {
     injectHeader();
     injectFooter();
