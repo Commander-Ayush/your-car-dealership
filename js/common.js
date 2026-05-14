@@ -128,7 +128,7 @@
       <footer class="site-footer" data-testid="site-footer">
         <div class="footer-grid">
           <div class="footer-brand">
-            <p class="overline">Auto Elite · Est. 2010</p>
+            <p class="overline">Auto Elite · Est. 1990</p>
             <h3>Delhi's most <span class="italic-em">trusted</span><br>used car destination.</h3>
             <p>Every vehicle inspected at 150+ checkpoints, backed by a 6-month warranty and transparent pricing. No surprises — ever.</p>
             <div class="socials">
